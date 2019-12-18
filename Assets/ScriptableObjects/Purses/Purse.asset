@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1874e30b067bd814cac4fe53e571fa9f, type: 3}
   m_Name: Purse
   m_EditorClassIdentifier: 
-  CurrentResources: 10
+  CurrentResources: 0
