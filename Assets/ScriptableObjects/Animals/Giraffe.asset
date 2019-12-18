@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec8183d8e79cae4d82b6f152c054a02, type: 3}
+  m_Name: Giraffe
+  m_EditorClassIdentifier: 
+  InitialResourceCapacity: 250
+  InitialResourcePerCooldown: 50
+  InitialUnlockState: 0
+  PurchaseAnimalCost: 300
+  IsUnlocked: 0
+  CurrentResources: 0
+  ResourceCapacity: 300
+  ResourceCooldownTime: 45
+  ResourcePerCooldown: 50
+  ResourceUpgradeIncrementalAmount: 50
+  CapacityIncrementalAmount: 300
+  ResourceIncreaseUpgradeCost: 300
+  CapacityUpgradeCost: 300

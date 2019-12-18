@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec8183d8e79cae4d82b6f152c054a02, type: 3}
+  m_Name: Elephant
+  m_EditorClassIdentifier: 
+  InitialResourceCapacity: 10
+  InitialResourcePerCooldown: 2
+  InitialUnlockState: 1
+  PurchaseAnimalCost: 0
+  IsUnlocked: 0
+  CurrentResources: 10
+  ResourceCapacity: 10
+  ResourceCooldownTime: 10
+  ResourcePerCooldown: 2
+  ResourceUpgradeIncrementalAmount: 10
+  CapacityIncrementalAmount: 100
+  ResourceIncreaseUpgradeCost: 300
+  CapacityUpgradeCost: 300
