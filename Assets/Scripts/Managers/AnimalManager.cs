@@ -47,8 +47,6 @@ public class AnimalManager : MonoBehaviour
 
     private void UpdateAnimalHudsCooldowns(float deltaTimeSeconds)
     {
-        print($"adding {deltaTimeSeconds} to our cds");
-        
         int animalHudCount = _animalHudList.Count;
 
         for (int i = 0; i < animalHudCount; i++)

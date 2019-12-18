@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Panda
   m_EditorClassIdentifier: 
   InitialResourceCapacity: 10000
-  InitialResourcePerCooldown: 120
+  InitialResourcePerCooldown: 1000
   InitialUnlockState: 0
   PurchaseAnimalCost: 10000
   IsUnlocked: 0
   CurrentResources: 0
   ResourceCapacity: 10000
-  ResourceCooldownTime: 120
-  ResourcePerCooldown: 120
+  ResourceCooldownTime: 45
+  ResourcePerCooldown: 1000
   ResourceUpgradeIncrementalAmount: 1000
   CapacityIncrementalAmount: 10000
   ResourceIncreaseUpgradeCost: 10000

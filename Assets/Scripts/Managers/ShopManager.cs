@@ -33,7 +33,7 @@ public class ShopManager : MonoBehaviour
 
     private void TryToPurchaseGoldPerUpgrade(AnimalAttributes animalAttribute)
     {
-        if (PurseManager.Instance.TryToPurchase(animalAttribute.ResourceUpgradeIncrementalAmount))
+        if (PurseManager.Instance.TryToPurchase(animalAttribute.ResourceIncreaseUpgradeCost))
         {
             GoldPerUpgradePurchaseSuccessful(animalAttribute);
         }

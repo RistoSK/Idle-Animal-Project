@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec8183d8e79cae4d82b6f152c054a02, type: 3}
   m_Name: Giraffe
   m_EditorClassIdentifier: 
-  InitialResourceCapacity: 250
-  InitialResourcePerCooldown: 50
+  InitialResourceCapacity: 450
+  InitialResourcePerCooldown: 150
   InitialUnlockState: 0
   PurchaseAnimalCost: 300
   IsUnlocked: 0
   CurrentResources: 0
-  ResourceCapacity: 300
-  ResourceCooldownTime: 45
-  ResourcePerCooldown: 50
-  ResourceUpgradeIncrementalAmount: 50
-  CapacityIncrementalAmount: 300
+  ResourceCapacity: 450
+  ResourceCooldownTime: 10
+  ResourcePerCooldown: 150
+  ResourceUpgradeIncrementalAmount: 150
+  CapacityIncrementalAmount: 450
   ResourceIncreaseUpgradeCost: 300
   CapacityUpgradeCost: 300

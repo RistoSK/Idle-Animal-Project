@@ -24,6 +24,7 @@ public class PurseManager : MonoBehaviour
     private void Start()
     {
         AnimalManager.Instance.OnResourceCollected += ResourceCollected;
+        Game.Instance.OnPurseUpdated += UpdatePurseHud;
         
         _purseHud.UpgradePurseHudValues(_purseAttribute.CurrentResources);
     }
@@ -43,6 +44,11 @@ public class PurseManager : MonoBehaviour
     private void ResourceCollected(float resourceAmount)
     {
         _purseAttribute.CurrentResources += resourceAmount;
+        _purseHud.UpgradePurseHudValues(_purseAttribute.CurrentResources);
+    }
+
+    private void UpdatePurseHud()
+    {
         _purseHud.UpgradePurseHudValues(_purseAttribute.CurrentResources);
     }
 }

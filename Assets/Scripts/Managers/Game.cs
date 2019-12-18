@@ -15,6 +15,8 @@ public class Game : MonoBehaviour
     private string _logOutTimeText;
 
     public Action<float> OnPlayerLogin;
+    public Action OnPurseUpdated;
+    
     private void Awake()
     {
         if (Instance)
@@ -42,7 +44,34 @@ public class Game : MonoBehaviour
         
         SaveGame();
     }
-
+    
+    //This is needed on the mobile build
+    
+    // private void OnApplicationPause(bool pauseStatus)
+    // {
+    //     MobileApplicationStateChanged(!pauseStatus);
+    // }
+    //
+    // private void OnApplicationFocus(bool hasFocus)
+    // {
+    //     MobileApplicationStateChanged(hasFocus);
+    // }
+    //
+    // private void MobileApplicationStateChanged(bool isOpen)
+    // {
+    //     if (isOpen)
+    //     {
+    //         LoadGame();
+    //     }
+    //     else
+    //     {
+    //         DateTime closingDateTime = DateTime.Now;
+    //         _logOutTimeText = closingDateTime.ToString(CultureInfo.InvariantCulture);
+    //     
+    //         SaveGame();
+    //     }
+    // }
+    
     public void ChangeScene()
     {
         SaveGame();
@@ -57,7 +86,6 @@ public class Game : MonoBehaviour
         SaveGame();
         LoadGame();  
         SceneManager.LoadScene(0);
-        Debug.Log("Game was loaded LoadGameScene");
     }
     
     public void SaveGame()
@@ -118,6 +146,8 @@ public class Game : MonoBehaviour
 
             _purseAttribute.CurrentResources = save.CurrentPurceGold;
 
+            OnPurseUpdated?.Invoke();
+            
             DateTime openingDateTime = DateTime.Now;
             String lastPlayTimeText = save.LogOutTimeText;
             

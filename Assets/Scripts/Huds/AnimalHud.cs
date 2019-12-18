@@ -38,7 +38,7 @@ public class AnimalHud : MonoBehaviour
             _animalAttribute.CurrentResources += _animalAttribute.ResourcePerCooldown;
             _harvestCooldown = 0;
             
-            if (_animalAttribute.CurrentResources > _animalAttribute.ResourceCapacity)
+            if (_animalAttribute.CurrentResources >= _animalAttribute.ResourceCapacity)
             {
                 AllResourcesGathered();
                 return;
