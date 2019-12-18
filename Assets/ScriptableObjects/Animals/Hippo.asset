@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Hippo
   m_EditorClassIdentifier: 
   InitialResourceCapacity: 4000
-  InitialResourcePerCooldown: 500
+  InitialResourcePerCooldown: 1000
   InitialUnlockState: 0
   PurchaseAnimalCost: 4000
   IsUnlocked: 0
   CurrentResources: 0
   ResourceCapacity: 4000
-  ResourceCooldownTime: 30
-  ResourcePerCooldown: 500
-  ResourceUpgradeIncrementalAmount: 2000
-  CapacityIncrementalAmount: 500
+  ResourceCooldownTime: 20
+  ResourcePerCooldown: 1000
+  ResourceUpgradeIncrementalAmount: 1000
+  CapacityIncrementalAmount: 2000
   ResourceIncreaseUpgradeCost: 1000
   CapacityUpgradeCost: 1000

@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec8183d8e79cae4d82b6f152c054a02, type: 3}
   m_Name: Elephant
   m_EditorClassIdentifier: 
-  InitialResourceCapacity: 50
-  InitialResourcePerCooldown: 10
+  InitialResourceCapacity: 60
+  InitialResourcePerCooldown: 20
   InitialUnlockState: 1
   PurchaseAnimalCost: 0
   IsUnlocked: 1
-  CurrentResources: 50
-  ResourceCapacity: 50
+  CurrentResources: 0
+  ResourceCapacity: 60
   ResourceCooldownTime: 2
-  ResourcePerCooldown: 10
+  ResourcePerCooldown: 20
   ResourceUpgradeIncrementalAmount: 10
   CapacityIncrementalAmount: 100
   ResourceIncreaseUpgradeCost: 100
