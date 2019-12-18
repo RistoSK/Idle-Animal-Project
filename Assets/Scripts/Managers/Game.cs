@@ -11,11 +11,13 @@ public class Game : MonoBehaviour
     public static Game Instance;
     
     private List<AnimalAttributes> _animalAttributesList = new List<AnimalAttributes>();
+    
     private PurseAttribute _purseAttribute;
     private string _logOutTimeText;
 
     public Action<float> OnPlayerLogin;
     public Action OnPurseUpdated;
+    public Action OnAnimalShopHudUpdated;
     
     private void Awake()
     {
@@ -27,13 +29,10 @@ public class Game : MonoBehaviour
         {
             Instance = this;
         }
-    }
-
-    private void Start()
-    {
+        
         _animalAttributesList = AnimalManager.Instance.GetAllAnimalAttributes;
         _purseAttribute = PurseManager.Instance.GetPurseAttribute;
-        
+
         LoadGame();
     }
 
@@ -44,33 +43,32 @@ public class Game : MonoBehaviour
         
         SaveGame();
     }
-    
-    //This is needed on the mobile build
-    
-    // private void OnApplicationPause(bool pauseStatus)
-    // {
-    //     MobileApplicationStateChanged(!pauseStatus);
-    // }
-    //
-    // private void OnApplicationFocus(bool hasFocus)
-    // {
-    //     MobileApplicationStateChanged(hasFocus);
-    // }
-    //
-    // private void MobileApplicationStateChanged(bool isOpen)
-    // {
-    //     if (isOpen)
-    //     {
-    //         LoadGame();
-    //     }
-    //     else
-    //     {
-    //         DateTime closingDateTime = DateTime.Now;
-    //         _logOutTimeText = closingDateTime.ToString(CultureInfo.InvariantCulture);
-    //     
-    //         SaveGame();
-    //     }
-    // }
+
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            DateTime closingDateTime = DateTime.Now;
+            _logOutTimeText = closingDateTime.ToString(CultureInfo.InvariantCulture);
+        
+            SaveGame();
+        }
+    }
+
+    private void MobileApplicationStateChanged(bool isOpen)
+    {
+        if (isOpen)
+        {
+            LoadGame();
+        }
+        else
+        {
+            DateTime closingDateTime = DateTime.Now;
+            _logOutTimeText = closingDateTime.ToString(CultureInfo.InvariantCulture);
+        
+            SaveGame();
+        }
+    }
     
     public void ChangeScene()
     {
@@ -78,6 +76,11 @@ public class Game : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();    
+    }
+    
     public void LoadGameScene()
     {
         DateTime closingDateTime = DateTime.Now;
@@ -115,7 +118,7 @@ public class Game : MonoBehaviour
         return save;
     }
 
-    private void LoadGame()
+    public void LoadGame()
     {
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
@@ -145,7 +148,8 @@ public class Game : MonoBehaviour
             }
 
             _purseAttribute.CurrentResources = save.CurrentPurceGold;
-
+            
+            OnAnimalShopHudUpdated?.Invoke();
             OnPurseUpdated?.Invoke();
             
             DateTime openingDateTime = DateTime.Now;
@@ -171,7 +175,9 @@ public class Game : MonoBehaviour
             _animalAttributesList[i].ResourcePerCooldown = _animalAttributesList[i].InitialResourcePerCooldown;
             _animalAttributesList[i].IsUnlocked = _animalAttributesList[i].InitialUnlockState;
         }
-
+        
+        OnAnimalShopHudUpdated?.Invoke();
+        
         _purseAttribute.CurrentResources = 0f;
         
         LoadGameScene();
